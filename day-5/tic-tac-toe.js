@@ -59,6 +59,9 @@ let state = [
     }
     
     checkWinner();
+    if(winner !== -1) {
+      console.log("Winner is:", winner)
+    }
   }
   
   function checkWinner() {
@@ -79,6 +82,16 @@ let state = [
     }
     
     // check for diagonals
+    if(state[0][0] == state[1][1] && state[1][1] == state[2][2]) {
+      winner = state[0][0];
+      return;
+    }
+    
+    if(state[0][2] == state[1][1] && state[1][1] == state[2][0]) {
+      winner = state[1][1];
+      return;
+    }
+    
   }
   
   function draw() {
